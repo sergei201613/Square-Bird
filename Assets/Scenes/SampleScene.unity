@@ -1139,6 +1139,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassBlock_3x3 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5835725774135338101, guid: 16e648bc2e2c26e4dac9fdc817730504,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5835725774135338107, guid: 16e648bc2e2c26e4dac9fdc817730504,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1262,6 +1267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851517006143575669, guid: 5837e8d3373a7674e81fe90ea00ae572,
+        type: 3}
+      propertyPath: jumpForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5837e8d3373a7674e81fe90ea00ae572, type: 3}

@@ -7,11 +7,12 @@ public class BirdMovement : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
+    public float moveDirection = 1f;
 
     public LayerMask groundMask;
+    public GroundCheck groundCheck;
 
     private Rigidbody2D _rb;
-    private bool _isGrounded;
 
     private void Awake()
     {
@@ -20,9 +21,21 @@ public class BirdMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * speed * Time.fixedDeltaTime, 0, 0);
+        Move(moveDirection);
 
-        if (Input.GetKeyDown(KeyCode.W) && _isGrounded)
+        if (Input.GetKeyDown(KeyCode.W))
+            Jump();  
+    }
+
+    public void Move(float direction)
+    {
+        transform.Translate(direction * speed * Time.fixedDeltaTime, 0, 0);
+    }
+
+    public void Jump()
+    {
+        // Force not always have the same power.
+        if (groundCheck.GetIsGrounded())
             _rb.AddForce(Vector2.up * jumpForce);
     }
 }
